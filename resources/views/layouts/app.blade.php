@@ -11,26 +11,32 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
+        <!-- Bootstrap 5 CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        
+        <!-- Alpine.js -->
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-        <script src="https://cdn.tailwindcss.com"></script>
+        
+        <!-- Bootstrap Icons -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100 dark:bg-gray-900 flex">
+    <body>
+        <div class="d-flex min-vh-100 bg-light">
             <!-- Sidebar (visible on desktop) -->
-            <div class="hidden md:block">
+            <div class="d-none d-md-block">
                 @include('layouts.sidebar')
             </div>
             
-            <div class="flex-1">
+            <div class="flex-grow-1">
                 <!-- Top Navigation (mobile) -->
-                <div class="md:hidden">
+                <div class="d-md-none">
                     @include('layouts.navigation')
                 </div>
 
                 <!-- Page Heading -->
                 @isset($header)
-                    <header class="bg-white dark:bg-gray-800 shadow">
-                        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                    <header class="bg-white shadow py-3">
+                        <div class="container-fluid px-4">
                             {{ $header }}
                         </div>
                     </header>
@@ -42,6 +48,9 @@
                 </main>
             </div>
         </div>
+        
+        <!-- Bootstrap 5 JS Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
         
         @stack('scripts')
     </body>

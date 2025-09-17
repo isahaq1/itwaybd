@@ -1,5 +1,6 @@
-<div class="min-h-screen w-64 bg-gray-800 text-white flex flex-col">
-    <div class="p-4 border-b border-gray-700">
+
+<div class="min-h-screen text-white flex flex-col" style="background-color: #0891b2">
+    <div class="p-4 border-b border-cyan-500">
         <a href="{{ route('dashboard') }}" class="flex items-center">
             <x-application-logo class="block h-9 w-auto fill-current text-white" />
             <span class="ml-3 text-xl font-semibold">{{ config('app.name') }}</span>
@@ -51,6 +52,13 @@
                 </svg>
                 {{ __('Customers') }}
             </x-sidebar-link>
+           
         </nav>
     </div>
+    <div class="p-4 border-t border-gray-200 dark:border-gray-700">
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button class="w-full text-left px-3 py-2 rounded bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-100">Logout</button>
+                    </form>
+                </div>
 </div>
